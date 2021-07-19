@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+{% block title %} Hankuk Place {% endblock %}
+{% block body %}
+    <section class="container-fluid p-0 m-0">
+        <img class="w-100" src="{{ asset('img/product_img.png') }}" alt="">
+        {{ form_start(form) }}
+        <div class="row m-0 bg-light">
+            <div class="d-md-flex col-md-8 mx-auto text-center">
+                <div class="col-md-6 col-12 p-4">{{ form_row(form.category) }}</div>
+                <div class="col-md-6 col-12 p-4">{{ form_row(form.Rechercher) }}</div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+        <div class="row d-lg-flex justify-content-around m-0 w-100 bg-dark">
+            {% for product in products %}
+                <div class="card_prod col-xl-2 col-md-4 col-sm-6 col-8 column bg-light rounded border border-secondary p-4 m-5">
+                    <img src="{{ asset('images/properties/') ~ product.filename }}" class="img_size w-100" alt="{{ product.name }}">
+                    <div class="d-flex justify-content-between my-2">
+                        <a class="text-dark text-decoration-none" href="{{ path('product_show',{id: product.id}) }}">{{ product.name }}</a>
+                    </div>
+                    <div class="col-12 d-flex justify-content-between position-absolute"
+                         style="bottom: 1em; left: 0">
+                        <a href="{{ path('product_show',{id: product.id}) }}" class="btn btn-outline-dark" role="button">
+                            En savoir plus
+                        </a>
+                        <a href="{{ path('cart_add', {id: product.id}) }}" class="btn btn-danger" role="button">
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                        </a>
+                    </div>
+                    <span class="p-4 position-absolute bg-dark text-light" style="top: 0; right: 0">{{ product.price }} €</span>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

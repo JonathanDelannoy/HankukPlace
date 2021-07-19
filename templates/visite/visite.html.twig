@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+{% block title %} Hankuk Place {% endblock %}
+
+{% block body %}
+    <div>
+        <img class="w-100" src="{{ asset('img/foodtour_img.png') }}" alt="">
+    </div>
+    <section class="container-fluid">
+        <div class="row d-flex my-4 border border-secondary">
+            <div class="col-4">
+                <h3 class="text-center my-2">Etape 1</h3>
+            </div>
+            <div class="col-8 embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+                        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d809688.4484740334!2d127.45625324030671!3d37.55870364288342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x357c98c2e633dc1d%3A0xf9f40aa872ab1d2c!2sHongik%20Univ.%20Station%2C%20Seogyo-dong%2C%20S%C3%A9oul!3m2!1d37.556776!2d126.923334!4m5!1s0x3561c706e20ec4bf%3A0x3e8aef915c81d18c!2s27-3%20Balhan-dong%2C%20Donghae-si%2C%20Gangwon-do%2C%20Cor%C3%A9e%20du%20Sud!3m2!1d37.5497842!2d129.1101084!5e0!3m2!1sfr!2sfr!4v1623078649603!5m2!1sfr!2sfr"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <div class="row d-flex my-4 border border-secondary">
+            <div class="col-8 embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+                        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d816783.9835652264!2d127.58278355554997!3d36.900814742000414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x3561c706e20ec4bf%3A0x3e8aef915c81d18c!2s27-3%20Balhan-dong%2C%20Donghae-si%2C%20Gangwon-do%2C%20Cor%C3%A9e%20du%20Sud!3m2!1d37.5497842!2d129.1101084!4m5!1s0x3565e3d194777a87%3A0x5cc1830e0cc24db4!2s168-2%20Dongdeok-ro%2C%20Dongin-dong%2C%20Jung-gu%2C%20Daegu%2C%20Cor%C3%A9e%20du%20Sud!3m2!1d35.8697716!2d128.6047838!5e0!3m2!1sfr!2sfr!4v1623078979786!5m2!1sfr!2sfr"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="col-4">
+                <h3 class="text-center my-2">Etape 2</h3>
+            </div>
+        </div>
+        <div class="row d-flex my-4 border border-secondary">
+            <div class="col-4">
+                <h3 class="text-center my-2">Etape 3</h3>
+            </div>
+            <div class="col-8 embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+                        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d415778.14691338356!2d128.58204372122503!3d35.49768122761636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x3565e3d194777a87%3A0x5cc1830e0cc24db4!2s168-2%20Dongdeok-ro%2C%20Dongin-dong%2C%20Jung-gu%2C%20Daegu%2C%20Cor%C3%A9e%20du%20Sud!3m2!1d35.8697716!2d128.6047838!4m5!1s0x356892da76aeb467%3A0x51de0ea4ace3d4fb!2s7%20Suyeongseong-ro%203(sam)beon-gil%2C%20Suyeong-dong%2C%20district%20de%20Suyeong%2C%20Busan%2C%20Cor%C3%A9e%20du%20Sud!3m2!1d35.169515!2d129.1195885!5e0!3m2!1sfr!2sfr!4v1623079133254!5m2!1sfr!2sfr"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <div class="row d-flex my-4 border border-secondary">
+            <div class="col-8 embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+                        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d418261.7641027129!2d128.1601406835988!3d35.01496422242272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x356892da76aeb467%3A0x51de0ea4ace3d4fb!2s7%20Suyeongseong-ro%203(sam)beon-gil%2C%20Suyeong-dong%2C%20district%20de%20Suyeong%2C%20Busan%2C%20Cor%C3%A9e%20du%20Sud!3m2!1d35.169515!2d129.1195885!4m5!1s0x356dd8d46d98f977%3A0xc1b89a852684e073!2s2-1%20Seogyo%203-gil%2C%20Seogyo-dong%2C%20Yeosu%2C%20Jeollanam-do%2C%20Cor%C3%A9e%20du%20Sud!3m2!1d34.7414852!2d127.72755839999999!5e0!3m2!1sfr!2sfr!4v1623079332593!5m2!1sfr!2sfr"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="col-4">
+                <h3 class="text-center my-2">Etape 4</h3>
+            </div>
+        </div>
+        <div class="row d-flex my-4 border border-secondary">
+            <div class="col-4">
+                <h3 class="text-center my-2">Etape 5</h3>
+            </div>
+            <div class="col-8 embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+                        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d833652.1160111675!2d126.88444221125661!3d35.29470958050429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x356dd8d46d98f977%3A0xc1b89a852684e073!2s2-1%20Seogyo%203-gil%2C%20Seogyo-dong%2C%20Yeosu%2C%20Jeollanam-do%2C%20Cor%C3%A9e%20du%20Sud!3m2!1d34.7414852!2d127.72755839999999!4m5!1s0x357024a075633873%3A0x522fed4c3deb6876!2s19-3%20Jeollagamyeong%205-gil%2C%20Jungangdong%203(sam)-ga%2C%20Wansan-gu%2C%20Jeonju%2C%20Jeollabuk-do%2C%20Cor%C3%A9e%20du%20Sud!3m2!1d35.8173923!2d127.1458373!5e0!3m2!1sfr!2sfr!4v1623079478931!5m2!1sfr!2sfr"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <div class="row d-flex my-4 border border-secondary">
+            <div class="col-8 embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"
+                        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d819067.4712705759!2d126.54566199102041!3d36.6869463740148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x357024a075633873%3A0x522fed4c3deb6876!2s19-3%20Jeollagamyeong%205-gil%2C%20Jungangdong%203(sam)-ga%2C%20Wansan-gu%2C%20Jeonju%2C%20Jeollabuk-do%2C%20Cor%C3%A9e%20du%20Sud!3m2!1d35.8173923!2d127.1458373!4m5!1s0x357c98dad4d0005f%3A0xaf11c13f0598c1e9!2s364-22%20Seogyo-dong%2C%20Mapo-gu%2C%20Seoul%2C%20Cor%C3%A9e%20du%20Sud!3m2!1d37.552057!2d126.92181679999999!5e0!3m2!1sfr!2sfr!4v1623079654407!5m2!1sfr!2sfr"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="col-4">
+                <h3 class="text-center my-2">Etape 6</h3>
+            </div>
+        </div>
+    </section>
+{% endblock %}

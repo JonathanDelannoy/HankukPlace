@@ -1,0 +1,50 @@
+.navbar-fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    height: 9em;
+    width: 14em;
+}
+
+nav ul {
+    list-style: none;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    transition: 1s;
+}
+
+.black {
+    background: #000;
+}
+
+.black_nav {
+    background: #000;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media (max-width: 1024px) {
+    .hidden {
+        display: block;
+    }
+}
+
+@media (max-width: 786px) {
+
+    nav ul li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 24px;
+        text-align: center;
+    }
+}

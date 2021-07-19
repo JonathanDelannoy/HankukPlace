@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+{% block title %} Hankuk Place {% endblock %}
+
+{% block body %}
+    <div class="detail_img"></div>
+    <section class="container">
+        <div class="text-center my-5">
+            <h1>Inscription</h1>
+        </div>
+        {{ form_start(registrationForm) }}
+        {{ form_label(registrationForm.email) }}
+        {{ form_widget(registrationForm.email) }}
+        {{ form_label(registrationForm.plainPassword) }}
+        {{ form_widget(registrationForm.plainPassword) }}
+        {{ form_label(registrationForm.name) }}
+        {{ form_widget(registrationForm.name) }}
+        {{ form_label(registrationForm.surname) }}
+        {{ form_widget(registrationForm.surname) }}
+        {{ form_label(registrationForm.address) }}
+        {{ form_widget(registrationForm.address) }}
+        <div class="text-center my-5">
+            <button class="btn btn-light">S'inscrire</button>
+        </div>
+        {{ form_end(registrationForm) }}
+
+    </section>
+{% endblock %}

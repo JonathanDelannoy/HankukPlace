@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+        {{ form_label(form.surname) }}
+        {{ form_widget(form.surname) }}
+        {{ form_label(form.address) }}
+        {{ form_widget(form.address) }}
+<div class="text-center my-5">
+    <button class="btn btn-light">{{ button_label|default('Sauvegarder') }}</button>
+</div>
+{{ form_end(form) }}

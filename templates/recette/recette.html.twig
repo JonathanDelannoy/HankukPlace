@@ -1,0 +1,548 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+{% block title %} Hankuk Place {% endblock %}
+
+{% block body %}
+    <div>
+        <img class="w-100" src="{{ asset('img/recette_img.png') }}" alt="">
+    </div>
+    <section class="container-fluid">
+        <div class="row text-center py-4">
+            <h2 class="col-12 pb-2">Le Bibimbap</h2>
+            <p class="col-12">Un plat complet et délicieux, d'origine coréenne ! Viandes, riz, légumes et souvent oeuf,
+                le tout
+                pour un
+                prix imbattable : un vrai voyage culinaire.</p>
+
+            <img class="col-6 w-100 mx-auto" src="{{ asset('img/bibimbap.jpg') }}" alt="">
+        </div>
+        <div class="col-12 text-center py-4">
+            <span class="lead font-weight-bold">Ingrédients</span>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Riz</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Boeuf</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Porc haché</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Carotte</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Concombre</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Epinard</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Pousse de soja</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Oignon</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Ail</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Sel</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Poivre</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Huile de sésame</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Graine de sésame</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Sucre</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 text-center py-4">
+            <span class="lead font-weight-bold">Préparation</span>
+        </div>
+        <article class="col-6 mx-auto">
+            <p>1/ Mélanger 1 cuillère à soupe de miel, 1 cuillère à soupe d'huile de sésame, 1 cuillère à soupe de
+                vinaigre de riz, 2 gousses d'ail, du poivre et 2 cuillère à soupe de sauce Kikkoman dans un bol pour
+                faire la marinade qui servira à la viande.</p>
+            <hr>
+            <p>2/ Mélanger le bœuf et le porc haché avec la marinade et réserver au frais. Préparer
+                les légumes : couper en fines lamelles les concombres, après avoir enlever les graines, couper en petits
+                bâtonnets très fins les carottes et émincer les oignons. Rincer les épinards frais ou sortir du
+                congélateur.
+                Rincer les pousses de soja. Hacher les gousses d'ail.</p>
+            <hr>
+            <p>3/ Faire cuire le riz selon les indications du paquet. Faire revenir les légumes (carotte, concombre,
+                soja et épinard) séparément dans des poêles bien chaudes avec un peu d'huile.
+                Ajouter à chacun un peu d'ail et d'oignon. Verser un peu d'huile de sésame (3-4 gouttes) et une pincée
+                de sucre. Réserver.
+                Faire revenir la viande hachée dans l'huile. Réserver. Faire également cuire les œufs au plat.</p>
+            <hr>
+            <p>4/ Préparer la sauce en mettant tous les ingrédients dans un bol et mélanger. Une fois que le riz est
+                cuit,
+                placer le riz dans des bols. Verser la sauce au centre (2 cuillères à soupe).</p>
+            <hr>
+            <p>5/ Placer au centre et au dessus de la sauce l’œuf au plat. Puis tout au tour disposer les légumes sans
+                les mélanger. Saupoudrer de graines de sésame.</p>
+            <hr>
+            <p>6/ Vous pouvez savourer votre Bibimbap !</p>
+        </article>
+        </div>
+    </section>
+    <hr class="bg-dark">
+    <section class="container-fluid">
+        <div class="row text-center py-4">
+            <h2 class="col-12 pb-2">Le Galbi</h2>
+            <p class="col-12">Le dakgalbi est un plat de poulet sauté épicé qui est généralement cuit devant vous
+                sur une grande plaque chauffante ronde. Le poulet est mariné dans une sauce à base de gochujang et cuit
+                avec des feuilles de périlla fraîches, du chou, des oignons verts et des galettes de riz.</p>
+
+            <img class="col-6 w-100 mx-auto" src="{{ asset('img/galbi.jpg') }}" alt="">
+        </div>
+        <div class="col-12 text-center py-4">
+            <span class="lead font-weight-bold">Ingrédients</span>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Riz</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Poulet</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Oignon</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Kimchi</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Gochujang</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Gochugaru</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Sauce soja</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Sucre</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Mirim</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Huile de sésame</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Ail</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Poivre</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Sel</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Huile végétale</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 text-center py-4">
+            <span class="lead font-weight-bold">Préparation</span>
+        </div>
+        <article class="col-6 mx-auto">
+            <p>1/ Couper le poulet en petits morceaux.</p>
+            <hr>
+            <p>2/ Couper l'oignon en petits morceaux ainsi que la ciboulette. Prendre un tier de tasse de Kimchi et le
+                couper en morceau avec une paire de ciseaux.</p>
+            <hr>
+            <p>3/ Faire la marinade pour le riz frit: Mélanger le Gochujang, le Gochugaru, la sauce soja, le sucre, le
+                Mirim, l'huile de sésame, émincer 2 gousses d'ail, le poivre et le sel.</p>
+            <hr>
+            <p>4/ Prendre un poele, mettre à feu moyen et mettre l'huile végétale dedans. Une fois chaud, mettre la
+                ciboulette, puis ajouter les morceaux de poulet. Laisser cuire quelques minutes et ajouter le kimchi
+                ainsi que les oignons puis laisser jusqu'à ce que le poulet soit cuit à 80%.</p>
+            <hr>
+            <p>5/ Maintenant placer la moitié de la marinade épicée et laisser 30 secondes. Ajouter le riz puis laisser
+                à feu moyen jusqu'à ce que le riz ai pris de la couleur grâce à la marinade. Vous pouvez y ajouter du
+                fromage si vous le voulez. Mélanger ensuite avec une spatule ou une cuillère à soupe pour enduire
+                correctement le riz et la viande puis laisser cuire encore 30 secondes.</p>
+            <hr>
+            <p>6/ Vous pouvez savourer votre Galbi !</p>
+        </article>
+        </div>
+    </section>
+    <hr class="bg-dark">
+    <section class="container-fluid">
+        <div class="row text-center py-4">
+            <h2 class="col-12 pb-2">Le Bulgogi</h2>
+            <p class="col-12">Le bulgogi (bul = feux et gogi = viande), donc littéralement viande cuite sur le feux est
+                un plat traditionnel Coréen , il est réalisé avec de la viande de boeuf ou de porc, mais dans ce dernier
+                cas
+                c'est une recette épicée avec de la pâte de piment.</p>
+
+            <img class="col-6 w-100 mx-auto" src="{{ asset('img/Bulgogi.jpg') }}" alt="">
+        </div>
+        <div class="col-12 text-center py-4">
+            <span class="lead font-weight-bold">Ingrédients</span>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Sauce soja</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Boeuf</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Sucre brun</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Miel</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Mirim</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Huile de sésame</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Graine de sésame</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Ail</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Gingembre</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Oignon</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Poire Nashi</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Champignons Enoki</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Ciboules</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Carotte</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 text-center py-4">
+            <span class="lead font-weight-bold">Préparation</span>
+        </div>
+        <article class="col-6 mx-auto">
+            <p>1/ La première étape consiste à réaliser la marinade pour la viande, pour cela dans un grand récipient y
+                verser la sauce soja, le miel, le sucre, l'huile de sésame et le Mirin. Mélanger. Ajouter ensuite
+                l'oignon émincé (1/2 rondelle d'un ou 2 mm d'épaisseur), presser l'ail et le gingembre et la poire (très
+                finement, un peu en compote). Finissez avec quelques tout du moulin à poivre et mélanger..</p>
+            <hr>
+            <p>2/ Ajouter la viande, mélanger et faire mariner au frais 30 min.
+                Pendant ce temps, trancher en petites section la ciboule, coupez les champignons et la carotte en
+                julienne, réservez.</p>
+            <hr>
+            <p>3/ Après 30 minutes, prenez une grande poêle ou poêle à anses que vous pouvez poser sur un réchaud
+                portable au milieu de la table, c'est toujours plus sympa entre amis.</p>
+            <hr>
+            <p>4/ Mélanger la viande marinée et les légumes (champignons, carottes, ciboule). Ajouter un peu de matière
+                grasse dans la poêle et y faire revenir à feux vif la quantité souhaitez si vous servez à table, car le
+                tout prend trop de place.</p>
+            <hr>
+            <p>5/ En fin de cuisson ajouter quelques graines de sésames.
+
+                Pour le manger plus traditionnellement, prenez une feuille de salade dans le creux de votre main,
+                ajouter le la viande, un peu de riz et un peu de pâte de piment assaisonnée. Pliez le tout et mettez en
+                bouche.</p>
+            <hr>
+            <p>6/ A déguster avec un riz et un bon verre de Soju. Bon appétit !</p>
+        </article>
+        </div>
+    </section>
+    <hr class="bg-dark">
+    <section class="container-fluid">
+        <div class="row text-center py-4">
+            <h2 class="col-12 pb-2">Le Kimbap</h2>
+            <p class="col-12">Le Kimbap (김밥) est une recette traditionnelle Coréenne, c'est un peu leur sandwich
+                local. Cela ressemble beaucoup au Maki Japonais, n'allez pas me demander qui l'a inventé en premier.
+                C'est un mélange de différents ingrédients qui sont roulés dans du riz collant et une feuille d'algue
+                grillée. Ils existe de nombreuses variantes. Au jambon, au thon, au poisson, crabes, viande de boeuf,
+                côtelette panée Japonaise, etc..</p>
+
+            <img class="col-6 w-100 mx-auto" src="{{ asset('img/kimbap.jpg') }}" alt="">
+        </div>
+        <div class="col-12 text-center py-4">
+            <span class="lead font-weight-bold">Ingrédients</span>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Feuilles d'algues</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Riz</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Oeufs</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Carotte</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Concombre</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Radis jaune</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Jambon</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Huile de sésame</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Graines de sésame</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Sel</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 text-center py-4">
+            <span class="lead font-weight-bold">Préparation</span>
+        </div>
+        <article class="col-6 mx-auto">
+            <p>1/ Assaisonner le riz avec un peu d'huile de sésame et un peu de sel, mélanger.
+                Battez les oeufs et réaliser une fine crêpe dans une poêle avec un peu l'huile.</p>
+            <hr>
+            <p>2/ Coupez cette crêpe puis les autres ingrédients (carotte, concombre, radis jaune, jambon) en fines
+                lanières
+                (max 5x5mm).
+                Faire revenir rapidement les carottes et le jambon dans un peu d'huile dans une casserole.</p>
+            <hr>
+            <p>3/ Poser sur la natte à sushi une feuille d'algues grillés le coté lisse vers le bas. Déposer du riz sur
+                les 2/3 de la feuille en veillant à obtenir la même épaisseur et ne pas trop écraser le riz.
+                Déposer sur le 1/3 restant, les ingrédients coupés dans le sens de la longueur.</p>
+            <hr>
+            <p>4/ A l'aide de la natte à sushi rouler une première fois l'algue sur elle-même afin d'enfermer les
+                ingrédients déposés. Presser le rouleau légèrement pour faire adhérer le riz et la feuille d'algue.
+                Continuer cette opération jusqu'au bout de la feuille d'algue et terminer en pressant bien autour de la
+                natte.
+                Passer avec le doigt une couche d'huile de sésame pour finaliser le collage et rendre brillant le
+                Kimbap.</p>
+            <hr>
+            <p>5/ Couper le Kimbap en tranche à l'aide d'un couteau aiguisé en fine tranche.
+                Déposer sur une assiette et parsemer de quelques graines de sésames pour terminer.</p>
+            <hr>
+            <p>6/ Peut être accompagné d'une petit sauce soja pour tremper le kimpab. Bon appétit !</p>
+        </article>
+        </div>
+    </section>
+    <hr class="bg-dark">
+    <section class="container-fluid">
+        <div class="row text-center py-4">
+            <h2 class="col-12 pb-2">Le Hotteok</h2>
+            <p class="col-12">Le seul dessert de notre top 5 ! Le Hotteok est une crêpe ou pancake Coréen qui est fourré
+                avec un mélange de sucre roux, de cannelle et de cacahuètes.</p>
+            <img class="col-6 w-100 mx-auto" src="{{ asset('img/hotteok.jpg') }}" alt="">
+        </div>
+        <div class="col-12 text-center py-4">
+            <span class="lead font-weight-bold">Ingrédients</span>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Farine</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Oeufs</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Lait</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Sucre</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Levure</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Sel</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Miel</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Huile de cuisine</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Sucre brun</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Cannelle</span>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-6 mx-auto d-flex justify-content-around">
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Cacahuètes hachées</span>
+                </div>
+                <div class="col-5 bg-light border rounded py-4 text-center">
+                    <span class="font-weight-normal font-weight-bold">Noix hachées</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 text-center py-4">
+            <span class="lead font-weight-bold">Préparation</span>
+        </div>
+        <article class="col-6 mx-auto">
+            <p>1/ Mettre dans un bol la farine, le sel, le sucre. Tamiser puis mélanger et pétrir le mélange</p>
+            <hr>
+            <p>2/ Mettre dans un bol l’eau chaude, ajouter la levure, et mélanger jusqu’à ce que la levure soit
+                dissoute. Mélanger et pétrir le premier et le deuxième mélange ensemble, si la pâte est trop liquide,
+                ajouter un peu de farine tamisée. Filmer et laisser 30 à 60 minutes pour fermenter</p>
+            <hr>
+            <p>3/ Mettre dans un bol le sucre brun, la poudre de cannelle, les cacahuètes et les noix hachées, ajouter
+                le miel puis bien mélanger.</p>
+            <hr>
+            <p>4/ Diviser la pâte en nombre de Hotteoks souhaités. Faire un puit dans chaque Hotteok, puis y ajouter un
+                peu de notre mélange à l’intérieur, puis bien refermer le Hotteok.
+            </p>
+            <hr>
+            <p>5/ Dans une poêle, mettre de l’huile en quantité suffisante. Mettre les Hotteoks dans la poêle avec les
+                côtés fermés dessous (en contact avec la poêle). Faire cuire à feu doux. Une fois que les Hotteoks
+                commencent à se tacheter, il faut les retourner et appuyer doucement dessus avec le dessous d’un bol ou
+                d’une casserole (préalablement huilé pour ne pas que ça colle). Faire la même chose de
+                chaque côté jusque la couleur des deux côtés soit tachetée et homogène.</p>
+            <hr>
+            <p>6/ Vous pouvez savourer vos Hotteoks !</p>
+        </article>
+        </div>
+    </section>
+{% endblock %}

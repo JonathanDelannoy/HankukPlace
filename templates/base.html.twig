@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<header class="container-fluid p-0 m-0 navbar-fixed">
+    <div class="col-12 d-xl-flex justify-content-around black border-bottom">
+        <div class="col-xl-6 col-12">
+            {% for label, messages in app.flashes(['success', 'error']) %}
+                {% for message in messages %}
+                    <div class="text-light my-1 flash-{{ label }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="col-xl-6 col-12 d-flex justify-content-around">
+            {% if app.user %}
+                <div class="col-12 text-center my-auto">
+                    <a class="text-light text-decoration-none font-weight-bold" href="{{ path('app_logout') }}">Se
+                        déconnecter</a>
+                </div>
+            {% else %}
+                <div class="col-6 text-center my-auto">
+                    <a class="text-light text-decoration-none font-weight-bold"
+                       href="{{ path('app_register') }}">Inscription</a>
+                </div>
+                <div class="col-6 text-center my-auto">
+                    <a class="text-light text-decoration-none font-weight-bold"
+                       href="{{ path('app_login') }}">Connexion</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-xl navbar-dark black_nav p-0 m-0">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav col-12 d-flex justify-content-between p-0">
+                <li class="hidden nav-item col-xl-2 col-12 text-center my-auto">
+                    <a class="nav-link text-light text-decoration-none font-weight-bold" href="{{ path('home') }}">Acceuil</a>
+                </li>
+                <li class="nav-item col-xl-2 col-12 text-center my-auto">
+                    <a class="nav-link text-light text-decoration-none font-weight-bold"
+                       href="{{ path('product_index') }}">Nos produits</a>
+                </li>
+                <li class="nav-item col-xl-2 col-12 text-center my-auto">
+                    <a class="nav-link text-light text-decoration-none font-weight-bold"
+                       href="{{ path('cart_index') }}">Panier</a>
+                </li>
+                <li class="nav-item col-xl-4 d-xl-block d-none text-center my-auto">
+                    <a class="nav-link" href="{{ path('home') }}"><img class="logo" src="{{ asset('img/logoHP.png') }}"
+                                                                       alt="hankuk_place"></a>
+                </li>
+                <li class="nav-item col-xl-2 col-12 text-center my-auto">
+                    <a class="nav-link text-light text-decoration-none font-weight-bold" href="{{ path('recette') }}">Nos
+                        recettes</a>
+                </li>
+                <li class="nav-item col-xl-2 col-12 text-center my-auto">
+                    <a class="nav-link text-light text-decoration-none font-weight-bold" href="{{ path('visite') }}">Notre
+                        tour de Corée !</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <div class="dropdown-menu black_nav" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-light text-decoration-none font-weight-bold"
+                           href="{{ path('product_index') }}">Nos produits</a>
+                        <a class="dropdown-item text-light text-decoration-none font-weight-bold"
+                           href="{{ path('cart_index') }}">Panier</a>
+                        <a class="dropdown-item text-light text-decoration-none font-weight-bold"
+                           href="{{ path('recette') }}">Nos recettes</a>
+                        <a class="dropdown-item text-light text-decoration-none font-weight-bold"
+                           href="{{ path('visite') }}">Notre tour de Corée !</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+{% block body %}{% endblock %}
+
+<footer class="container-fluid black text-light border-top">
+    <div class="row py-5">
+        <div class="col-xl-4 col-12 py-2 text-center">
+            <div class="bordure">
+                <h4>HANKUK PLACE</h4>
+                <img class="logo" src="{{ asset('img/logoHP.png') }}" alt="hankuk_place">
+                <div class="social mt-2 mb-3">
+                    <i class="fab fa-facebook fa-lg"></i>
+                    <i class="fab fa-instagram fa-lg"></i>
+                    <i class="fab fa-twitter fa-lg"></i>
+                    <i class="fab fa-snapchat fa-lg"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2 col-12 py-2 text-center"></div>
+        <div class="col-xl-2 col-12 py-2 text-center">
+            <h5 class="heading">A propos</h5>
+            <ul class="p-0 my-4">
+                <li class="list-unstyled my-2"><a class="hover_color text-decoration-none" href="{{ path('home') }}">Plan
+                        du site</a></li>
+                <li class="list-unstyled my-2"><a class="hover_color text-decoration-none" href="{{ path('home') }}">Livraisons</a>
+                </li>
+                <li class="list-unstyled my-2"><a class="hover_color text-decoration-none" href="{{ path('home') }}">Réclamations</a>
+                </li>
+                <li class="list-unstyled my-2"><a class="hover_color text-decoration-none" href="{{ path('home') }}">Notre
+                        société</a></li>
+            </ul>
+        </div>
+        <div class="col-xl-2 col-12 py-2 text-center">
+            <h5 class="heading">Votre Compte</h5>
+            <ul class="p-0 my-4">
+                {% if(app.user) %}
+                    <li class="list-unstyled my-2"><a class="hover_color text-decoration-none"
+                                                      href="{{ path('user_show', {'id': app.user.id}) }}">Infos
+                            personelles</a></li>
+                {% else %}
+                    <li class="list-unstyled my-2"><a class="hover_color text-decoration-none"
+                                                      href="{{ path('app_login') }}">Connexion</a></li>
+                {% endif %}
+                <li class="list-unstyled my-2"><a class="hover_color text-decoration-none" href="{{ path('home') }}">Commandes</a>
+                </li>
+                <li class="list-unstyled my-2"><a class="hover_color text-decoration-none" href="{{ path('home') }}">Adresses</a>
+                </li>
+                <li class="list-unstyled my-2"><a class="hover_color text-decoration-none" href="{{ path('home') }}">Bons
+                        de réductions</a></li>
+            </ul>
+        </div>
+        <div class="col-xl-2 col-12 py-2 text-center">
+            <h5 class="heading">FAQ</h5>
+            <ul class="p-0 my-4">
+                <li class="list-unstyled my-2"><a class="hover_color text-decoration-none" href="{{ path('home') }}">Politique
+                        de Confidentialité</a></li>
+                <li class="list-unstyled my-2"><a class="hover_color text-decoration-none" href="{{ path('home') }}">Conditions
+                        de vente</a></li>
+                <li class="list-unstyled my-2"><a class="hover_color text-decoration-none" href="{{ path('home') }}">Conditions
+                        d'utilisation</a></li>
+                <li class="list-unstyled my-2"><a class="hover_color text-decoration-none" href="{{ path('home') }}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <p><i class="fa fa-copyright"></i> 2021 Hankuk Place</p>
+        </div>
+    </div>
+</footer>
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+{% endblock %}
+</body>
+</html>

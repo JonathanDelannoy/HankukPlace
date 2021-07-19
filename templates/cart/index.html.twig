@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+{% block title %} Hankuk Place {% endblock %}
+
+{% block body %}
+    <section class="container-fluid p-0 m-0">
+        <div class="detail_img"></div>
+        <h1 class="col-6 py-4 bg-primary text-light my-4 mx-auto text-center rounded">Votre Panier</h1>
+        <table class="table mb-5">
+            <thead>
+            <tr class="text-center bg-primary text-light">
+                <th class="bg-primary text-light">Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for element in dataPanier %}
+                <tr class="text-center">
+                    <td>{{ element.produit.name }}</td>
+                    <td>{{ element.produit.price }} €</td>
+                    <td>{{ element.quantite }}</td>
+                    <td>{{ element.quantite * element.produit.price }} €</td>
+                    <td>
+                        <a class="btn btn-success" href="{{ path("cart_add", {id: element.produit.id}) }}">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                        <a class="btn btn-warning" href="{{ path("cart_remove", {id: element.produit.id}) }}">
+                            <i class="fas fa-minus"></i>
+                        </a>
+                        <a class="btn btn-danger" href="{{ path("cart_delete", {id: element.produit.id}) }}">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr class="text-center">
+                    <td colspan="5">Votre panier est vide</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr class="text-center bg-primary text-light">
+                <td colspan="2"></td>
+                <th>Total</th>
+                <td>{{ total }} €</td>
+                <td></td>
+            </tr>
+            </tfoot>
+        </table>
+        <div class="col-12 d-flex justify-content-between mb-4">
+            <a class="col-4 text-left w-25 btn btn-lg btn-outline-primary text-center" href="{{ path('product_index') }}">Continuer mon shopping</a>
+            <a class="col-4 text-right w-25 btn btn-lg btn-outline-primary text-center" href="{{ path('payment') }}">Valider ma commande</a>
+        </div>
+    </section>
+{% endblock %}
